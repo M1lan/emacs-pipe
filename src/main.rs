@@ -2,7 +2,6 @@ use std::env::temp_dir;
 use std::fs::{File, remove_file};
 use std::io::{self, Read, Write};
 use std::process::{Command, Stdio};
-use md5;
 
 fn main() -> io::Result<()> {
     let mut input = String::new();
