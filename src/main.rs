@@ -1,5 +1,5 @@
 use std::env::temp_dir;
-use std::fs::{File, remove_file};
+use std::fs::{remove_file, File};
 use std::io::{self, Read, Write};
 use std::process::{Command, Stdio};
 
