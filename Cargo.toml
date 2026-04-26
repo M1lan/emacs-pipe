@@ -1,8 +1,20 @@
 [package]
 name = "emacspipe"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
+description = "Pipe stdin into a running Emacs server. Sync or async, with feature-parity Bash twin."
+license = "MIT"
+repository = "https://github.com/M1lan/emacs-pipe"
+readme = "readme.md"
+
+[[bin]]
+name = "epipe"
+path = "src/main.rs"
 
 [dependencies]
-atty = "0.2.14"
 md5 = "0.7.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
