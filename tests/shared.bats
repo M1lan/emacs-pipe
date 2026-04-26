@@ -60,6 +60,7 @@ run_epipe_with_input() {
 }
 
 @test "tty stdin refuses with exit 2" {
+    [[ -t 0 ]] || skip "this test requires a real tty on stdin"
     run -2 "$EPIPE_BIN"
     [ "$status" -eq 2 ]
     [[ "$output" == *"stdin must be a pipe"* ]]
